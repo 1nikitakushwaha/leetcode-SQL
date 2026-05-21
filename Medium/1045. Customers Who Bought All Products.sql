@@ -23,7 +23,7 @@
 -- Group rows by customer_id.
 -- Count distinct products bought by each customer.
 -- Compare it with total number of products in Product table.
--- If both counts are equal, that customer bought all products.
+-- If both counts are equal, that customer bought all products.*/
 
 -- Select customers who bought all products
 select customer_id
