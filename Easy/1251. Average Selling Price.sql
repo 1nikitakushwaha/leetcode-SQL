@@ -1,5 +1,22 @@
+# 1251. Average Selling Price
+
+/*
+PROBLEM:
+We are given two tables:
+1. Prices(product_id, start_date, end_date, price)
+2. UnitsSold(product_id, purchase_date, units)
+
+We need to find the average selling price for each product.
+
+Average Price = 
+(total revenue from product) / (total units sold)
+
+Round result to 2 decimal places.
+If a product has no sales, return 0.
+*/
+--query--
 SELECT 
-    p.product_id,
+p.product_id,
     CASE
         WHEN SUM(u.units) is null
         THEN 0
