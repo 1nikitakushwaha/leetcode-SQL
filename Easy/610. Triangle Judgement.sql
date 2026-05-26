@@ -1,4 +1,4 @@
-# 610. Triangle Judgement
+/*# 610. Triangle Judgement
 
 ## Problem Statement
 Write a query to determine whether three sides `x`, `y`, and `z` can form a triangle.
@@ -23,6 +23,7 @@ Output:
 | 13 | 15 | 30 | No       |
 | 10 | 20 | 15 | Yes      |
 +----+----+----+----------+
+  */
 
 ## SQL Query
 SELECT*,
