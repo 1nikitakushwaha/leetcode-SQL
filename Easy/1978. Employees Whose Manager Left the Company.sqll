@@ -1,0 +1,44 @@
+/*# Employees Whose Manager Left the Company
+
+## Problem Overview
+
+We are given an `Employees` table containing employee information, including their manager's ID and salary.
+
+The task is to find employees whose:
+
+- Salary is less than 30000.
+- Have a manager (`manager_id` is not NULL).
+- Manager is no longer present in the company (the manager's ID does not exist in the table).
+
+---
+
+## Objective
+
+Return the IDs of employees whose managers have left the company and whose salary is less than 30000.
+
+---
+
+## Output
+
+Return a table containing:
+
+| Column Name |
+|-------------|
+| employee_id |
+
+The result should be ordered by `employee_id`.
+
+---*/
+
+## query
+
+SELECT employee_id
+FROM Employees e
+WHERE salary < 30000
+  AND manager_id IS NOT NULL
+  AND NOT EXISTS (
+      SELECT 1
+      FROM Employees m
+      WHERE m.employee_id = e.manager_id
+  )
+ORDER BY employee_id;
